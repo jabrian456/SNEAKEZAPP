@@ -67,11 +67,11 @@ Tracks what music an individual listens to, and pairs them with others based on 
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
+<img src="https://github.com/jabrian456/SNEAKEZAPP/blob/main/ezgif.com-gif-maker.gif" width=800><br>
 
 
 ### [BONUS] Interactive Prototype
-<img src="https://i.imgur.com/AiKfE5g.gif" width=200>
+
 
 ## Schema 
 ### Models

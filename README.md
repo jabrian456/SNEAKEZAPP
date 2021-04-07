@@ -4,41 +4,43 @@
 # TUNIN
 
 ## Table of Contents
-1. [Overview](#Overview)
-1. [Product Spec](#Product-Spec)
+Unit 8: Group Milestone - README Example
+===
+
+:::
+
+# TUNIN
+
+## Table of Contents
+1. [Overview](#Sneakez App)
+1. [Product Spec](Pages within App)
 1. [Wireframes](#Wireframes)
-1. [Schema](#Schema)
 
 ## Overview
 ### Description
-Tracks what music an individual listens to, and pairs them with others based on that music. Could be potentially used as a dating app, or just meeting new friends with similar music tastes.
+Allows users to share collectoin and reach out to people that interenst in selling shoes at their current shoes event.
+   - **Market:** Anyone that takes pictures could enjoy this app. Ability to follow and hashtag based on interests and categories allows users with unique interests to engage with relevant content.
+   - **Habit:** Users can post throughout the day many times. Features like "Stories" encourage more candid posting as well. Users can explore endless pictures in any category imaginable whenever they want. Very habbit forming!
 
 ### App Evaluation
-- **Category:** Social Networking / SHOE COLLECTOR APP
+- **Category:** Social Networking / Music
 - **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer, such as tinder or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
 - **Story:** Analyzes users music choices, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
 - **Market:** Any individual could choose to use this app, and to keep it a safe environment, people would be organized into age groups.
 - **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
-- **Scope:** First we would start with pairing people of shoe collector. This app will be simlar to 23isback.com.  
+- **Scope:** First we would start with pairing people based on music taste, then perhaps this could evolve into a music sharing application as well to broaden its usage. Large potential for use with spotify, apple music, or other music streaming applications.
 
 ## Product Spec
-### 1. User Stories (Required and Optional)
+### 1.News Page,Calendar,Map, Profile & Shoe Collector Page 
 
-**Required Must-have Stories**
+
 
 * User logs in to access previous chats and preference settings
-* User picks what their favorite artist/genre/etc. (Think Spotify interface)
-* Matches have a chat window to get to know each other, with the ability to skip music and unmatch (Tinder Style).
+* User picks what their favorite city. User will also be able to post the location of the shoe event. (Think 23Isback.com interface)
+* Matches have a chat window to get to know each other, with the ability to skip user if they dont want to coneversate of dicate the objective of the confernce
 * Profile pages for each user
 * Settings (Accesibility, Notification, General, etc.)
 
-**Optional Nice-to-have Stories**
-
-* Log of past Shoes
-*
-* Profile Add-On: Top Collection of Shoes
-* Optional  Calendar Button for shoe collection. (i.e. random encounter/random song)
-* Listening/Encounter Queue
 
 ### 2. Screen Archetypes
 
@@ -47,31 +49,34 @@ Tracks what music an individual listens to, and pairs them with others based on 
    * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to be properly matched with another person. 
    * ...
 * Messaging Screen - Chat for users to communicate (direct 1-on-1)
-   * Upon selecting music choice users matched and message screen opens
-* Profile Screen 
-   * Allows user to upload a photo and fill in information that is interesting to them and others
-* Song Selection Screen.
-   * Allows user to be able to choose their desired song, artist, genre of preference and begin listening and interacting with others.
+   * Upon selecting shoe evenet users matched and message screen opens.
+* News Screen 
+   * Allows user to upload a photo and fill in information that is interesting to them and others regarding current information
+* .Loading Screen
+   * Allows user to be able to choose their desired shoes, from nike, puma, rebok or Retro Jordan
 * Settings Screen
    * Lets people change language, and app notification settings.
 
 ### 3. Navigation
 
+**Tab Navigation** (Tab to Screen)
 
+* Front Ad
+* Loading Screen
+* 3 Kicks Start pages
+* Calendar
+* News
+* Profile
+* Map of Current Events
+* Chat Room
 
 
 **Flow Navigation** (Screen to Screen)
 * Forced Log-in -> Account creation if no log in is available
-* Music Selection (Or Queue if Optional) -> Jumps to Chat
-* Profile -> Text field to be modified. 
-* Settings -> Toggle settings
-
-## Wireframes
-<img src="https://github.com/jabrian456/SNEAKEZAPP/blob/main/ezgif.com-gif-maker.gif" width=800><br>
-
-
-### [BONUS] Interactive Prototype
-
+* Customer will here a Starting tune
+* Customer is will be to help of the resouces of knowing current events.
+    ``
+*![](https://i.imgur.com/WmTwj8L.jpg)
 
 ## Schema 
 ### Models
@@ -92,30 +97,57 @@ Tracks what music an individual listens to, and pairs them with others based on 
    - Home Feed Screen
       - (Read/GET) Query all posts where user is author
          ```swift
-         let query = PFQuery(className:"Post")
-         query.whereKey("author", equalTo: currentUser)
-         query.order(byDescending: "createdAt")
-         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let error = error { 
-               print(error.localizedDescription)
-            } else if let posts = posts {
-               print("Successfully retrieved \(posts.count) posts.")
-           // TODO: Do something with posts...
-            }
-         }
+         class DataController{
+//   let persistentContainer = NSPersistentContainer(name: "LibraryDataModel")
+//
+//    var context: NSManagedObjectContext {
+//        return self.persistentContainer.viewContext
+//    }
+//
+//    func initalizeStack() {
+//           // 2.
+//           self.persistentContainer.loadPersistentStores { description, error in
+//               // 3.
+//               if let error = error {
+//                   print("could not load store \(error.localizedDescription)")
+//                   return
+//               }
+//
+//               print("store loaded")
+//           }
+//       }
+//
+//    func createSneaker(name:String,brand:String,date:String){
+//        let sneaker = SneakerData(context: context)
+//        sneaker.name = name
+//        sneaker.brand = brand
+//        sneaker.date = date
+//        self.context.insert(sneaker)
+//        do{
+//        try self.context.save()
+//
+//        }catch{
+//            print("ERRROROR")
+//        }
+//    }
+//
+//    func fetchUsers() throws -> [SneakerData] {
+//        let sneakers = try self.context.fetch(SneakerData.fetchRequest() as NSFetchRequest<SneakerData>)
+//        return sneakers
+//    }
          ```
-      - (Create/POST) Create a new like on a post
+      - (Create/POST) Create a new post in Chat
       - (Delete) Delete existing like
       - (Create/POST) Create a new comment on a post
       - (Delete) Delete existing comment
    - Create Post Screen
-      - (Create/POST) Create a new post object
+      - (Create/POST) Create a new post for shoe calendar events
    - Profile Screen
       - (Read/GET) Query logged in user object
       - (Update/PUT) Update user profile image
 #### [OPTIONAL:] Existing API Endpoints
-##### An API Of Ice And Fire
-- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+##### ' An API Of ShoeCollector'
+- Base URL - [http://www.shoecollector.com/api](http://www.shoecollector.com/api)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
@@ -124,15 +156,3 @@ Tracks what music an individual listens to, and pairs them with others based on 
     `GET`    | /houses   | get all houses
     `GET`    | /houses/?name=name | return specific house by name
 
-##### Game of Thrones API
-- Base URL - [https://api.got.show/api](https://api.got.show/api)
-
-   HTTP Verb | Endpoint | Description
-   ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name

@@ -147,7 +147,7 @@ Allows users to share collectoin and reach out to people that interenst in selli
       - (Update/PUT) Update user profile image
 #### [OPTIONAL:] Existing API Endpoints
 ##### ' An API Of ShoeCollector'
-- Base URL - [http://www.shoecollector.com/api](http://www.shoecollector.com/api)
+- Base URL - [http://www.buildmyapp.com/api](http://www.buildmyapp.com/api)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
